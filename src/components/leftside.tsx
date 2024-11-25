@@ -1,8 +1,8 @@
 import Image from "next/image";
-import TitleComponent from "./title";
-import { strict } from "assert";
-import ItemProgressComponent from "./itemprogress";
-import NameComponent from "./name";
+import NameComponent from "./NameComponent";
+import TitleComponent from "./TitleComponent";
+import ItemProgressComponent from "./ItemProgress";
+import IconItemComponent from "./IconItem";
 
 const itSkills = [
 	{
@@ -23,9 +23,63 @@ const itSkills = [
 	},
 ];
 
+const languageSkills = [
+	{
+		title: "Malagasy",
+		rate: 9,
+	},
+	{
+		title: "French",
+		rate: 7,
+	},
+	{
+		title: "English",
+		rate: 6,
+	},
+];
+
+const details = {
+	phone: "+261340449252",
+	address:
+		"alskglajlakwj gal asdlkjhfalskdjfh a;slkgja; lsdkgja;sldkgjalsdgj alkgjla skdjgwkg jawlgj alw",
+	mail: "alskdjfal@skghw.com",
+	social: {
+		facebook: {
+			title: "sdjfh awj ",
+			link: "https://ldfkjglakga.wrgl/",
+			icon: "FaFacebook",
+		},
+		linkedin: {
+			title: "oirogl kjqrogj q",
+			link: "https://dlkrjhlkwtehw.werger/",
+			icon: "FaLinkedin",
+		},
+		x: {
+			title: "oljirglekjrg lkrj lqjrgq",
+			link: "https://loihwjerlkgj.dohger/agrqer/qwergqaergq",
+			icon: "FaXTwitter",
+		},
+	},
+};
+
+const mainSkills = [
+	"laskjals",
+	"dtykedtyke yy",
+	"laskryjdfjet57i ejks6ijals",
+	"laskgfkr67kfguklfyuk drut ejals",
+	"78orhjk dgyhk dtgyhjkd tyjhs y",
+	"cghj dtyj dtyj dtyj sy kwajs ryket  dfgj d",
+	"askdjghakwhg",
+	"vbnmk fukdtkdtu kdtkdyk dgyk s",
+	"sdfjghloaerjh",
+	"gilrfyulstyk styks ryk srtyk s",
+	"aerhglaerhglakjer",
+	"4ujsrfj sfjsfgjd sjs jsrtj srtj srtj srtjsryj srtj srj",
+];
+
 const LeftSide = () => {
 	return (
-		<div className="">
+		<div className="py-4">
 			<div className="profile relative">
 				<div className="h-60 relative flex items-center justify-center">
 					<Image
@@ -46,7 +100,43 @@ const LeftSide = () => {
 
 			<div className="ml-4 flex flex-col">
 				<TitleComponent title="Contact" side="left" />
+				<div>
+					{details.phone && (
+						<IconItemComponent title={details.phone} icon="FaPhone" />
+					)}
+
+					{details.mail && (
+						<IconItemComponent title={details.mail} icon="FaEnvelope" />
+					)}
+					{details.address && (
+						<IconItemComponent title={details.address} icon="FaHouse" />
+					)}
+				</div>
+
 				<TitleComponent title="Social Media" side="left" />
+				<div>
+					{details.social.facebook && (
+						<IconItemComponent
+							title={details.social.facebook.title}
+							link={details.social.facebook.link}
+							icon="FaFacebook"
+						/>
+					)}
+					{details.social.linkedin && (
+						<IconItemComponent
+							title={details.social.linkedin.title}
+							link={details.social.linkedin.link}
+							icon="FaLinkedin"
+						/>
+					)}
+					{details.social.x && (
+						<IconItemComponent
+							title={details.social.x.title}
+							link={details.social.x.link}
+							icon="FaXTwitter"
+						/>
+					)}
+				</div>
 				<TitleComponent title="IT Skills" side="left" />
 				<div className="mr-4">
 					{itSkills.map((item, index) => (
@@ -58,6 +148,25 @@ const LeftSide = () => {
 					))}
 				</div>
 				<TitleComponent title="Language" side="left" />
+				<div className="mr-4">
+					{languageSkills.map((item, index) => (
+						<ItemProgressComponent
+							title={item.title}
+							rate={Math.ceil(item.rate * 1.2)}
+							key={index}
+						/>
+					))}
+				</div>
+				<TitleComponent title="Main Skills" side="left" />
+				<div className="mx-4">
+					<ul className="list-disc">
+						{mainSkills.map((item, index) => (
+							<li className="text-white text-xs text-justify" key={index}>
+								{item}
+							</li>
+						))}
+					</ul>
+				</div>
 			</div>
 		</div>
 	);

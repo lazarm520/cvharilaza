@@ -13,7 +13,7 @@ const ItemProgressComponent = ({
 				<div
 					className={`absolute z-30 h-3 ${
 						rate ? "w-" + rate + "/12" : ""
-					} bg-white `}
+					} bg-white transition duration-1000 ease-in-out transition-property-width`}
 				></div>
 			</div>
 		</div>

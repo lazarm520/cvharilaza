@@ -5,10 +5,10 @@ const NameComponent = () => {
 				<span className="text-blue-800 capitalize text-end text-3xl font-bold tracking-tighter">
 					Jhonson Harilaza asgr qerhgqerh qerh q
 				</span>
-				<span className="text-white bg-blue-800 uppercase text-right text-lg pl-5 pr-2">
+				<span className="text-white bg-blue-800 uppercase text-right text-xl pl-5 pr-2">
 					Ramihajamanana asg qewrhgqethw ethqqr hgqrh q
 				</span>
-				<span className="text-blue-400 uppercase text-right text-md pl-5 pr-2 mt-8">
+				<span className="text-blue-400 uppercase text-right text-md pl-5 pr-2 mt-6">
 					Project Engineer avjjhasldjkg algkjq;lwkgjq wlrkg jwer
 				</span>
 			</div>

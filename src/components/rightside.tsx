@@ -1,9 +1,9 @@
-import NameComponent from "./name";
-import TitleComponent from "./title";
+import NameComponent from "./NameComponent";
+import TitleComponent from "./TitleComponent";
 
 const RightSide = () => {
 	return (
-		<div className="mr-3">
+		<div className="mr-3 py-4">
 			<div className="hidden sm:block">
 				<NameComponent />
 			</div>
